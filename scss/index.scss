@@ -1,0 +1,77 @@
+@import "./main.scss";
+
+
+/***********************************/
+/***********************************/
+/***********************************/
+body{}
+
+
+
+body{
+  >header{
+    
+  }
+  >nav{
+
+  }
+  >main{
+    >section{
+    }
+    >article{
+    }
+    .carte{
+    }
+  }
+  >footer{
+    >h4{
+    }
+    >h5,>a{}
+    >h5{
+    }
+    >a{
+    }
+  }
+}
+
+
+@include mobile-only{
+  body{
+    &>header{}
+    &>nav{}
+    &>main{
+      &>section{}
+      &>article{}
+    }
+    &>footer{
+      &>ul{}
+    }
+  }
+}
+@include tablette-only{
+  body{
+    &>header{}
+    &>nav{}
+    &>main{
+      &>section{}
+      &>article{}
+    }
+    &>footer{
+      &>ul{}
+    }
+  }
+}
+@include from-desktop{
+  body{
+    &>header{}
+    &>nav{}
+    &>main{
+      &>section{}
+      &>article{}
+    }
+    &>footer{
+      &>ul{}
+    }
+  }
+}
+
