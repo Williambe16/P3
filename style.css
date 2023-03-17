@@ -58,6 +58,11 @@ body, html {
     margin: 1.5rem 0;
 }
 
+.hero-btn:hover {
+    background-color: #fff;
+    box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
+}
+
 .hero-btn {
     border: 0;
     padding: 0.75rem 1.5rem;
@@ -89,6 +94,7 @@ body, html {
 .tuto-steps {
     margin: 0;
     padding: 0;
+    margin-top: 25px;
     list-style: none;
     counter-reset: compteListe;
 }
@@ -127,6 +133,12 @@ body, html {
     position: relative;
 }
 
+.tuto-step:hover{
+
+    background-color: #f4daff;
+
+}
+
 .tuto-step:last-child {
     margin-bottom: 0;
 }
@@ -137,6 +149,7 @@ body, html {
 }
 
 .cards {
+    margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(1,1fr);
     column-gap: 2rem;
@@ -207,6 +220,24 @@ body, html {
     position: relative;
 }
 
+.delay-0{
+
+    animation-delay: 0s;
+
+}
+
+.delay-1{
+
+    animation-delay: 1s;
+
+}
+
+.delay-2{
+
+    animation-delay: 2s;
+
+}
+
 .menu-header {
     padding: 1rem 2rem 0 1rem;
     display: flex;
@@ -214,7 +245,13 @@ body, html {
     justify-content: space-between;
 }
 
-.menu-like {
+.menu-title{
+
+    font-family: Shrikhand, "Cursive";
+
+}
+
+/* .menu-like {
     transition-duration: .25s;
     background-color: #f6f6f6;
     display: flex;
@@ -223,21 +260,54 @@ body, html {
     mix-blend-mode: lighten;
 }
 
+.menu-btn:before{
+
+    opacity: 0;
+    transition: .5s;
+    content: "";
+    background: linear-gradient(0deg, #9356dc, #ff79da);
+
+}
+
 .menu-btn:before, .menu-like {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-}
+} */
 
 .card-like {
-    background-color: #fff!important;
+    /* background-color: #fff!important; */
+    position: relative;
+}
+
+.card-like>i{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 1em;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(0deg #9356dc #ff79da);
+    transition: clip .4s;
+    clip: rect(2em 2em 2em 0px);
+
+}
+
+.card-like:hover{
+
+    opacity: 1;
+    clip: rect(0px 2em 2em 0px);
+
 }
 
 .menu-btn {
     height: 2rem;
     width: 2rem;
+    /*
     background-color: initial;
     border: 0 solid transparent;
     padding: 0;
@@ -246,7 +316,13 @@ body, html {
     justify-content: center;
     cursor: pointer;
     position: relative;
-    background-color: #000;
+    background-color: #000; */
+}
+
+.menu-btn:hover::before{
+
+    opacity: 1;
+
 }
 
 .submenus {
@@ -277,6 +353,13 @@ body, html {
     bottom: 0;
 }
 
+.menuItem-header{
+
+    flex: 1;
+    padding: 1em;
+
+}
+
 .menuItem-header, .menuItem-title {
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -295,6 +378,7 @@ body, html {
 }
 
 .menuItem-price {
+    margin-right: 1em;
     font-weight: 700;
     display: flex;
     justify-content: flex-end;
@@ -316,6 +400,11 @@ body, html {
     padding: 3rem 0;
 }
 
+.commandBtn:hover {
+    background-color: #fff;
+    box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
+}
+
 .commandBtn {
     border: 0;
     padding: 0.75rem 1.5rem;
@@ -332,15 +421,22 @@ body, html {
 
 .menuItem:hover .menuItem-confirmation{
 
-    margin-right: 0px;
+    margin-right: -16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    margin-left: 15px;
+    border-radius: 0 0 0.75rem;
 
+}
+
+.menuItem:hover .menuItem-wrapIcon {
+    transform: rotate(0);
 }
 
 .menuItem{
 
     display: flex;
     background-color: #fff;
-    padding: 1rem;
     border-radius: 0.75rem;
     margin: 1rem 0;
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
@@ -351,7 +447,8 @@ body, html {
 
 .menuItem-confirmation {
     background-color: #99e2d0;
-    margin: -1rem -5rem -1rem 1rem;
+    align-self: normal;
+    margin-right: -4rem;
     width: 4rem;
     display: flex;
     align-items: center;
@@ -371,14 +468,18 @@ body, html {
     transition-duration: .5s;
 }
 
-.menuItem-icon {
-    color: #99e2d0;
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
 }
 
-.menuItem-price{
-
-    margin-left: auto;
-
+.menuItem-icon {
+    color: #99e2d0;
 }
 
 .header-arrow {
@@ -401,7 +502,6 @@ body, html {
         
         opacity: 0;
         z-index: -1;
-        transform: rotate(0deg);
 
     }
 
@@ -409,19 +509,17 @@ body, html {
 
         opacity: 1;
         z-index: 10000;
-        transform: rotate(90deg);
 
     }
 
 }
 
-.loader{
+.loader-wrapper{
         position: fixed;
         top: 0;
         bottom: 0;
         right: 0;
         left: 0;
-        background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
         animation: spinner 3s linear 0s 1 forwards;
     }
 
@@ -482,6 +580,7 @@ body, html {
 
     .cards{
 
+        margin-top: 25px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
