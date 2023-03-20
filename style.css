@@ -307,6 +307,8 @@ body, html {
 .menu-btn {
     height: 2rem;
     width: 2rem;
+    border: none;
+    background: none;
     /*
     background-color: initial;
     border: 0 solid transparent;
